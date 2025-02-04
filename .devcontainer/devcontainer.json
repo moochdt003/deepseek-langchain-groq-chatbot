@@ -1,0 +1,32 @@
+{
+	"name": "Python Deepseek Dev Container",
+	"build": {
+		"dockerfile": "Dockerfile.DevContainer"
+	},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.formatting.provider": "black",
+				"python.linting.enabled": true,
+				"python.linting.pylintEnabled": true,
+				"editor.formatOnSave": true,
+				"editor.codeActionsOnSave": {
+					"source.organizeImports": "explicit"
+				}
+			},
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-toolsai.jupyter",
+				"esbenp.prettier-vscode",
+				"ms-python.black-formatter",
+				"streetsidesoftware.code-spell-checker",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+	"remoteUser": "vscode"
+}

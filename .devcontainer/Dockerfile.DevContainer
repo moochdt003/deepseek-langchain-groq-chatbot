@@ -1,0 +1,22 @@
+# Use an official Python image as the base
+FROM mcr.microsoft.com/vscode/devcontainers/python:3.10
+
+# Install necessary tools and clean up
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    && apt-get clean
+
+# Update pip, setuptools, and wheel
+RUN python -m pip install --upgrade pip setuptools wheel
+
+# Create the vscode user if it doesn't exist
+RUN chown -R vscode:vscode /home/vscode
+
+# Set the working directory and user
+WORKDIR /workspace
+USER vscode
+
+# Copy and install Python dependencies if requirements.txt exists
+COPY requirements.txt /workspace/requirements.txt
+RUN if [ -f requirements.txt ]; then pip install --no-cache-dir -r requirements.txt; else echo "No requirements.txt found. Skipping dependency installation."; fi
