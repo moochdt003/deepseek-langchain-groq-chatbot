@@ -99,16 +99,6 @@ While the chatbot is running:
 - "Find recent developments in renewable energy"
 - "Tell me about the history of the Internet"
 
-## Project Structure
-
-enhanced-langchain-groq-chatbot/
-├── app.py # Main application file
-├── requirements.txt # Project dependencies
-├── .env # Environment variables (create this)
-├── .gitignore # Git ignore file
-├── README.md # This file
-└── chatbot.log # Log file (created when running)
-
 ## Contributing
 
 1. Fork the repository
